@@ -6,7 +6,7 @@
     <title>Wewa Thaula Guest | Luxury Five-Star Hotel &amp; Nature Retreat</title>
     <meta name="description" content="Wewa Thaula Guest is a premium five-star luxury hotel and nature retreat offering elegant rooms, fine dining, spa &amp; wellness and unforgettable hospitality.">
     <meta property="og:title" content="Wewa Thaula Guest | Luxury Five-Star Hotel">
-    <meta property="og:description" content="Experience Luxury. Embrace nature. Discover a peaceful escape where comfort, elegance and unforgettable hospitality come together.">
+    <meta property="og:description" content="Experience luxury. Embrace nature. Discover a peaceful escape where comfort, elegance and unforgettable hospitality come together.">
     <meta property="og:type" content="website">
     <meta property="og:image" content="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1200&q=80">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -657,12 +657,19 @@ ul { list-style: none; }
 
 .room-actions { display: flex; gap: 10px; flex-wrap: wrap; }
 
-.rooms-note {
+.rooms-status {
+    grid-column: 1 / -1;
     text-align: center;
+    padding: 50px 20px;
     color: var(--muted);
-    font-size: 0.8rem;
-    margin-top: 34px;
-    font-style: italic;
+    font-size: 0.95rem;
+}
+
+.rooms-status i {
+    font-size: 1.8rem;
+    color: var(--gold);
+    margin-bottom: 12px;
+    display: block;
 }
 
 /* ============================================================
@@ -1519,79 +1526,14 @@ ul { list-style: none; }
                 <div class="divider"><span></span><i class="fa-solid fa-gem"></i><span></span></div>
                 <p class="section-lead">Choose from thoughtfully designed spaces where comfort meets timeless elegance.</p>
             </div>
-            <div class="rooms-grid">
-                <article class="room-card reveal">
-                    <div class="room-media">
-                        <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=800&q=80" alt="Deluxe Room with elegant bedding and warm lighting">
-                        <span class="room-tag">Popular Choice</span>
-                    </div>
-                    <div class="room-body">
-                        <h3>Deluxe Room</h3>
-                        <p class="room-desc">A serene retreat with plush bedding, refined décor and garden views — perfect for a restful escape.</p>
-                        <ul class="room-amenities">
-                            <li><i class="fa-solid fa-bed"></i> King Bed</li>
-                            <li><i class="fa-solid fa-expand"></i> 32 m&sup2;</li>
-                            <li><i class="fa-solid fa-mug-hot"></i> Tea &amp; Coffee</li>
-                            <li><i class="fa-solid fa-wifi"></i> Free Wi-Fi</li>
-                        </ul>
-                        <div class="room-footer">
-                            <div class="room-price"><span class="currency">$</span>145<small> / night*</small></div>
-                            <div class="room-actions">
-                                <a href="#booking" class="btn btn-dark btn-sm">View Details</a>
-                                <a href="#booking" class="btn btn-gold btn-sm">Book Now</a>
-                            </div>
-                        </div>
-                    </div>
-                </article>
 
-                <article class="room-card reveal">
-                    <div class="room-media">
-                        <img src="https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=800&q=80" alt="Superior Room with spacious layout and modern design">
-                    </div>
-                    <div class="room-body">
-                        <h3>Superior Room</h3>
-                        <p class="room-desc">Extra space, a cozy seating area and panoramic views — ideal for longer, unhurried stays.</p>
-                        <ul class="room-amenities">
-                            <li><i class="fa-solid fa-bed"></i> King Bed</li>
-                            <li><i class="fa-solid fa-expand"></i> 42 m&sup2;</li>
-                            <li><i class="fa-solid fa-mountain-sun"></i> Scenic View</li>
-                            <li><i class="fa-solid fa-wifi"></i> Free Wi-Fi</li>
-                        </ul>
-                        <div class="room-footer">
-                            <div class="room-price"><span class="currency">$</span>195<small> / night*</small></div>
-                            <div class="room-actions">
-                                <a href="#booking" class="btn btn-dark btn-sm">View Details</a>
-                                <a href="#booking" class="btn btn-gold btn-sm">Book Now</a>
-                            </div>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="room-card reveal">
-                    <div class="room-media">
-                        <img src="https://images.unsplash.com/photo-1611892440504-42a792e24d32?auto=format&fit=crop&w=800&q=80" alt="Luxury Suite with spacious bed and elegant interior">
-                        <span class="room-tag tag-gold">Signature</span>
-                    </div>
-                    <div class="room-body">
-                        <h3>Luxury Suite</h3>
-                        <p class="room-desc">Our finest suite — a generous living space, private balcony and bespoke touches for the ultimate stay.</p>
-                        <ul class="room-amenities">
-                            <li><i class="fa-solid fa-bed"></i> King Bed</li>
-                            <li><i class="fa-solid fa-expand"></i> 64 m&sup2;</li>
-                            <li><i class="fa-solid fa-couch"></i> Living Area</li>
-                            <li><i class="fa-solid fa-bath"></i> Soaking Tub</li>
-                        </ul>
-                        <div class="room-footer">
-                            <div class="room-price"><span class="currency">$</span>320<small> / night*</small></div>
-                            <div class="room-actions">
-                                <a href="#booking" class="btn btn-dark btn-sm">View Details</a>
-                                <a href="#booking" class="btn btn-gold btn-sm">Book Now</a>
-                            </div>
-                        </div>
-                    </div>
-                </article>
+            <!-- Dynamic Rooms Grid populated from Google Sheet -->
+            <div class="rooms-grid" id="roomsGrid">
+                <div class="rooms-status">
+                    <i class="fa-solid fa-spinner fa-spin"></i>
+                    <p>Loading rooms &amp; live rates...</p>
+                </div>
             </div>
-            <p class="rooms-note reveal">* Sample prices for demonstration only — replace with your actual nightly rates.</p>
         </div>
     </section>
 
@@ -1851,9 +1793,6 @@ ul { list-style: none; }
                     <label for="roomType">Room Type <span>*</span></label>
                     <select id="roomType" name="roomType" required>
                         <option value="">Select a room</option>
-                        <option value="Deluxe Room">Deluxe Room</option>
-                        <option value="Superior Room">Superior Room</option>
-                        <option value="Luxury Suite">Luxury Suite</option>
                     </select>
                     <small class="error-msg"></small>
                 </div>
@@ -2106,7 +2045,129 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 
     /* ----------------------------------------------------------
-       5. GALLERY LIGHTBOX
+       5. FETCH & DISPLAY ROOMS FROM GOOGLE APPS SCRIPT
+       ---------------------------------------------------------- */
+    const WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbzr2xVQGZqcGrS3t6l-vgT1TrYZSoeIDKDWjN6U0PeSGZj1R19LZZOxf9zbBFAcokZT/exec';
+    const roomsGrid = document.getElementById('roomsGrid');
+    const roomTypeSelect = document.getElementById('roomType');
+
+    // Curated luxury room photos to cycle through for each row in the sheet
+    const roomImages = [
+        'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=800&q=80',
+        'https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=800&q=80',
+        'https://images.unsplash.com/photo-1611892440504-42a792e24d32?auto=format&fit=crop&w=800&q=80',
+        'https://images.unsplash.com/photo-1566665797739-1674de7a421a?auto=format&fit=crop&w=800&q=80',
+        'https://images.unsplash.com/photo-1631049307264-da0ec9d70304?auto=format&fit=crop&w=800&q=80'
+    ];
+
+    const escapeHTML = (str) => {
+        const div = document.createElement('div');
+        div.textContent = str ?? '';
+        return div.innerHTML;
+    };
+
+    const loadRoomsFromSheet = async () => {
+        try {
+            const response = await fetch(WEB_APP_URL);
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+
+            const result = await response.json();
+            // Support either a direct array [...] or wrapped object { data: [...] }
+            const rooms = Array.isArray(result) ? result : (result.data || result.records || []);
+
+            if (!rooms.length) {
+                roomsGrid.innerHTML = `
+                    <div class="rooms-status">
+                        <i class="fa-solid fa-bed"></i>
+                        <p>No rooms are currently listed. Please check back shortly.</p>
+                    </div>`;
+                return;
+            }
+
+            roomsGrid.innerHTML = '';
+            roomTypeSelect.innerHTML = '<option value="">Select a room</option>';
+
+            rooms.forEach((room, index) => {
+                // Support lowercase or capitalized column headers (name, price, description)
+                const name = String(room.name ?? room.Name ?? 'Luxury Room').trim();
+                const rawPrice = String(room.price ?? room.Price ?? '0').trim();
+                const description = String(room.description ?? room.Description ?? '').trim();
+
+                // Strip leading '$' if already included in the Google Sheet cell
+                const cleanPrice = rawPrice.replace(/^\$/, '');
+                const imgUrl = roomImages[index % roomImages.length];
+
+                // Add badge tag to first and last items for visual variety
+                let tagHTML = '';
+                if (index === 0) {
+                    tagHTML = '<span class="room-tag">Popular Choice</span>';
+                } else if (index === rooms.length - 1 && rooms.length > 1) {
+                    tagHTML = '<span class="room-tag tag-gold">Signature</span>';
+                }
+
+                // Create card element
+                const article = document.createElement('article');
+                article.className = 'room-card reveal';
+                article.innerHTML = `
+                    <div class="room-media">
+                        <img src="${imgUrl}" alt="${escapeHTML(name)}">
+                        ${tagHTML}
+                    </div>
+                    <div class="room-body">
+                        <h3>${escapeHTML(name)}</h3>
+                        <p class="room-desc">${escapeHTML(description)}</p>
+                        <ul class="room-amenities">
+                            <li><i class="fa-solid fa-bed"></i> King Bed</li>
+                            <li><i class="fa-solid fa-snowflake"></i> Air Conditioning</li>
+                            <li><i class="fa-solid fa-mug-hot"></i> Tea &amp; Coffee</li>
+                            <li><i class="fa-solid fa-wifi"></i> Free Wi-Fi</li>
+                        </ul>
+                        <div class="room-footer">
+                            <div class="room-price"><span class="currency">$</span>${escapeHTML(cleanPrice)}<small> / night</small></div>
+                            <div class="room-actions">
+                                <a href="#booking" class="btn btn-gold btn-sm book-room-btn" data-room="${escapeHTML(name)}">Book Now</a>
+                            </div>
+                        </div>
+                    </div>
+                `;
+
+                roomsGrid.appendChild(article);
+                revealObserver.observe(article);
+
+                // Populate booking form dropdown with the room name
+                const option = document.createElement('option');
+                option.value = name;
+                option.textContent = `${name} ($${cleanPrice}/night)`;
+                roomTypeSelect.appendChild(option);
+            });
+
+            // Auto-select room in the booking form when "Book Now" is clicked on a card
+            roomsGrid.querySelectorAll('.book-room-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const selectedRoom = btn.dataset.room;
+                    if (selectedRoom) {
+                        roomTypeSelect.value = selectedRoom;
+                        clearError(roomTypeSelect);
+                    }
+                });
+            });
+
+        } catch (error) {
+            console.error('Error fetching room data:', error);
+            roomsGrid.innerHTML = `
+                <div class="rooms-status">
+                    <i class="fa-solid fa-triangle-exclamation"></i>
+                    <p>Unable to load room details at the moment. Please refresh the page or try again later.</p>
+                </div>`;
+        }
+    };
+
+    loadRoomsFromSheet();
+
+    /* ----------------------------------------------------------
+       6. GALLERY LIGHTBOX
        ---------------------------------------------------------- */
     const galleryItems = [...document.querySelectorAll('.gallery-item')];
     const lightbox = document.getElementById('lightbox');
@@ -2173,7 +2234,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     /* ----------------------------------------------------------
-       6. TESTIMONIAL SLIDER (auto-play + dots)
+       7. TESTIMONIAL SLIDER (auto-play + dots)
        ---------------------------------------------------------- */
     const track = document.getElementById('testimonialTrack');
     const cards = track.children;
@@ -2216,7 +2277,7 @@ document.addEventListener('DOMContentLoaded', () => {
     slider.addEventListener('mouseleave', restartAutoPlay);
 
     /* ----------------------------------------------------------
-       7. FORM VALIDATION HELPERS
+       8. FORM VALIDATION HELPERS
        ---------------------------------------------------------- */
     const showError = (input, message) => {
         const group = input.closest('.form-group');
@@ -2242,7 +2303,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
     /* ----------------------------------------------------------
-       8. BOOKING FORM VALIDATION + CONFIRMATION
+       9. BOOKING FORM VALIDATION + CONFIRMATION
        ---------------------------------------------------------- */
     const bookingForm = document.getElementById('bookingForm');
     const bookingSuccess = document.getElementById('bookingSuccess');
@@ -2331,7 +2392,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     /* ----------------------------------------------------------
-       9. CONTACT FORM
+       10. CONTACT FORM
        ---------------------------------------------------------- */
     const contactForm = document.getElementById('contactForm');
     const contactSuccess = document.getElementById('contactSuccess');
@@ -2369,7 +2430,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     /* ----------------------------------------------------------
-       10. NEWSLETTER FORM
+       11. NEWSLETTER FORM
        ---------------------------------------------------------- */
     const newsletterForm = document.getElementById('newsletterForm');
     const newsletterEmail = document.getElementById('newsletterEmail');
@@ -2393,14 +2454,14 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     /* ----------------------------------------------------------
-       11. BACK TO TOP
+       12. BACK TO TOP
        ---------------------------------------------------------- */
     backToTop.addEventListener('click', () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     });
 
     /* ----------------------------------------------------------
-       12. FOOTER YEAR
+       13. FOOTER YEAR
        ---------------------------------------------------------- */
     document.getElementById('year').textContent = new Date().getFullYear();
 
